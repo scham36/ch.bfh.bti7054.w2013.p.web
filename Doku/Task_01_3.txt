@@ -1,0 +1,24 @@
+Personas
+
+Persona 1
+Name: Helene Fischer
+Alter: 29 Jahre
+Geschlecht: Weiblich
+Grösse / Gewicht / Figur: Sportlich
+Herkunft: CSSR, aufgewachsen in Deutschland
+Einkommen: > CHF 500'000 / Jahr
+Beruf: Sängerin / Unterhaltungskünstlerin
+Hobbies: Skifahren, Biken, Golf, Ausgang
+Wohnort: Deutschland
+
+Persona 2
+Name: 
+Alter: 
+Geschlecht: 
+Grösse / Gewicht / Figur: 
+Herkunft: 
+Einkommen: 
+Beruf: 
+Hobbies: 
+Wohnort: 
+

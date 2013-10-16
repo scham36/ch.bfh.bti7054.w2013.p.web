@@ -1,0 +1,27 @@
+Auf meinem Webshop sollen Kleider gekauft werden können. Diese sind int unterschiedliche Kategorien gegliedert wie z.B.
+- T-Shirt
+- Hemden
+- Hosen
+- Jacken
+- ...
+
+Die einzelnen Artikel sollen in mehreren Farben sowie in mehreren Grössen verfügbar sein.
+Es gibt unterschiedliche Grössenangaben wie z.B.
+- bei Shirts: "XS, S, M, L, XL"
+- bei Jacken: "32, 34, 36, 38, 40, ..."
+- bei Hosen "30/32, 30/34, 32/32, 32/34, .., 36/36" (2 Grössenangaben für Bundweite und Länge)
+- ...
+
+Es gibt pro Artikel nur ein Bild pro Farbe, die Grösse ist nicht auf dem Bild ersichtlich. Diese wird im Warenkorb oder beim einlegen in den Warenkorb gewählt. Die Farbe wird anhand des Bildes gewählt, sollte aber im Warenkorb auch noch geändert werden können.
+
+Es gibt verschiedene Hersteller (Marken) der Kleidung wie z.B.
+- Diesel
+- Levi's
+- Peak Performance
+- ...
+
+Es kann pro Kategorie mehrere Hersteller (Marken) geben und pro Hersteller mehrere Kategorien geben, z.B. Jeans von Levi's und Jeans von Diesel, Jacke von Diesel und Jacke von Peak Performance.
+
+Der Besucher soll entweder über den gewünschten Hersteller oder die gewünschte Kategorie (oder Kombination aus Beidem) die entsprechenden Artikel angezeigt bekommen.
+Die Artikelliste / Artikelseite soll nicht überladen werden. Es sollen nur eine begrenzte Anzahl Artikel gleichzeitig angezeigt werden, mit Möglichkeit zum "blättern".
+

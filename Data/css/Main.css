@@ -1,0 +1,29 @@
+body
+{
+	color: black;
+	background-color: white;
+}
+
+div#Header
+{
+}
+
+div#Navigation
+{
+	float: left;
+}
+
+div#Info
+{
+	float: right;
+}
+
+div#Content
+{
+	float: left;
+}
+
+div#Footer
+{
+	clear: both;
+}

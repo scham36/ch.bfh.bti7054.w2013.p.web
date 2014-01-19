@@ -1,0 +1,131 @@
+-- Zum erstellen der benötigten Tabellen sowie von einigen Initialeinträgen
+
+CREATE TABLE IF NOT EXISTS `groesse` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `typ` VARCHAR(30) NOT NULL
+);
+
+INSERT INTO `groesse` VALUES (NULL, 'XL');
+INSERT INTO `groesse` VALUES (NULL, 'L');
+INSERT INTO `groesse` VALUES (NULL, 'M');
+INSERT INTO `groesse` VALUES (NULL, 'S');
+INSERT INTO `groesse` VALUES (NULL, 'XS');
+
+/*
+CREATE TABLE IF NOT EXISTS `groessen-jacken` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `typ` VARCHAR(30) NOT NULL
+);
+
+INSERT INTO `groessen-jacken` VALUES (NULL, '32');
+INSERT INTO `groessen-jacken` VALUES (NULL, '34');
+INSERT INTO `groessen-jacken` VALUES (NULL, '36');
+INSERT INTO `groessen-jacken` VALUES (NULL, '38');
+INSERT INTO `groessen-jacken` VALUES (NULL, '40');
+
+CREATE TABLE IF NOT EXISTS `groessen-hosen` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `typ` VARCHAR(30) NOT NULL
+);
+
+INSERT INTO `groessen-hosen` VALUES (NULL, '30/32');
+INSERT INTO `groessen-hosen` VALUES (NULL, '30/34');
+INSERT INTO `groessen-hosen` VALUES (NULL, '32/32');
+INSERT INTO `groessen-hosen` VALUES (NULL, '32/34');
+INSERT INTO `groessen-hosen` VALUES (NULL, '36/36');
+*/
+
+CREATE TABLE IF NOT EXISTS `farbe` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `typ` VARCHAR(10) NOT NULL
+);
+
+INSERT INTO `farbe` VALUES (NULL, 'weiss');
+INSERT INTO `farbe` VALUES (NULL, 'schwarz');
+INSERT INTO `farbe` VALUES (NULL, 'blau');
+INSERT INTO `farbe` VALUES (NULL, 'rot');
+INSERT INTO `farbe` VALUES (NULL, 'braun');
+INSERT INTO `farbe` VALUES (NULL, 'lila');
+
+
+CREATE TABLE IF NOT EXISTS `hersteller` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `fname` VARCHAR(20) NOT NULL,
+    `strasse` VARCHAR(40) NOT NULL,
+    `plz` INT(6) NOT NULL,
+    `ort` VARCHAR(20) NOT NULL
+);
+
+INSERT INTO `hersteller` VALUES (NULL, 'Diesel', 'Benzinstrasse 7', 3000, 'Bern');
+INSERT INTO `hersteller` VALUES (NULL, 'Levi', 'Mustergasse 12', 3000, 'Bern');
+INSERT INTO `hersteller` VALUES (NULL, 'Peak Performance', 'Gipfelweg 4', 3000, 'Bern');
+
+CREATE TABLE IF NOT EXISTS `kategorie` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `typ` VARCHAR(30) NOT NULL,
+    `gruppe` VARCHAR(2) NOT NULL
+);
+
+INSERT INTO `kategorie` VALUES (NULL, 'T-Shirt', 1);
+INSERT INTO `kategorie` VALUES (NULL, 'Hose', 1);
+INSERT INTO `kategorie` VALUES (NULL, 'Jacke', 1);
+INSERT INTO `kategorie` VALUES (NULL, 'Kleid', 1);
+INSERT INTO `kategorie` VALUES (NULL, 'T-Shirt', 2);
+INSERT INTO `kategorie` VALUES (NULL, 'Hose', 2);
+INSERT INTO `kategorie` VALUES (NULL, 'Jacke', 2);
+INSERT INTO `kategorie` VALUES (NULL, 'Hemd', 2);
+
+CREATE TABLE IF NOT EXISTS `gruppe` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `typ` VARCHAR(30) NOT NULL
+);
+
+INSERT INTO `gruppe` VALUES (NULL, 'Damen');
+INSERT INTO `gruppe` VALUES (NULL, 'Herren');
+INSERT INTO `gruppe` VALUES (NULL, 'Kinder');
+
+
+CREATE TABLE IF NOT EXISTS `produkte` (
+    `id` INT(5) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`id`),
+    `bezeichnung` VARCHAR(30) NOT NULL,
+    `bild` VARCHAR(30) NOT NULL,
+    `beschreibung` VARCHAR(100) NOT NULL,
+    `gruppe` INT(5) NOT NULL,
+    `kategorie` INT(5) NOT NULL,
+    `hersteller` INT(5) NOT NULL,
+    `groesse` INT(5) NOT NULL,
+    `preis` VARCHAR(3) NOT NULL,
+    `lager` INT(5) NOT NULL
+);
+
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Freizeithose', 'hose.png', 'Klassische Hose fuer die Freizeit', 2, 2, 3, 2, 43, 11);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Freizeithose', 'hose.png', 'Klassische Hose fuer die Freizeit', 2, 2, 1, 2, 34, 21);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Freizeithose', 'hose.png', 'Klassische Hose fuer die Freizeit', 1, 2, 1, 4, 21, 2);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Jacke', 'jacke.png', 'Schicke Jacke fuer den Alltag', 1, 3, 3, 2, 34, 21);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Hemd', 'hemd.png', 'Standard-Hemd', 2, 8, 1, 1, 19, 10);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Hemd', 'hemd.png', 'Standard-Hemd', 2, 8, 3, 1, 29, 1);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Abendkleid', 'kleid.png', 'Elegantes Abendkleid', 1, 4, 2, 3, 29, 4);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Abendkleid', 'kleid.png', 'Schlichtes abendkleid', 1, 4, 1, 4, 19, 3);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'Hemd', 'hemd.png', 'Standard-Hemd', 2, 8, 2, 2, 9, 100);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'T-Shirt uni', 'tshirt.png', 'Klassische T-Shirt', 2, 5, 1, 2, 29, 10);
+INSERT INTO `produkte` (`id`, `bezeichnung`, `bild`, `beschreibung`, `gruppe`, `kategorie`, `hersteller`, `groesse`, `preis`, `lager`) VALUES (NULL, 'T-Shirt farbig', 'tshirt.png', 'Klassisches T-Shirt', 2, 5, 1, 2, 29, 5);
+
+CREATE TABLE IF NOT EXISTS `benutzer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `benutzername` VARCHAR(20) NOT NULL,
+  `passwort` VARCHAR(64) NOT NULL,
+  `email` VARCHAR(50) NOT NULL,
+  `admin` INT(1) NOT NULL,
+  PRIMARY KEY  (`id`)
+);
+
+INSERT INTO `benutzer` (`id`, `benutzername`, `passwort`, `email`, `admin`) VALUES (NULL, 'admin', 'admin', 'admin@scham36.ch', 1);
+INSERT INTO `benutzer` (`id`, `benutzername`, `passwort`, `email`, `admin`) VALUES (NULL, 'scham36', 'scham36', 'scham36@scham36.ch', 0);

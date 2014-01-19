@@ -1,0 +1,6 @@
+Anmelden;Enregistrer
+Benutzername;Nom d'utilisateur
+Passwort;Mot de passe
+Produkte;Produits
+Produkt;Produit
+Kategorien;catégories

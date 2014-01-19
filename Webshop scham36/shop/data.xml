@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<branches>
+    <branch>
+	    <name>Filiale Olten</name>
+	    <street>Musterstrasse 7</street>
+	    <pc>4600</pc>
+	    <city>Olten</city>
+    </branch>
+    <branch>
+	    <name>Filiale Bern</name>
+	    <street>Speichergasse 7</street>
+	    <pc>3000</pc>
+	    <city>Bern</city>
+    </branch>
+    <branch>
+	    <name>Filiale Solothurn</name>
+	    <street>Musterstrasse 7</street>
+	    <pc>4500</pc>
+	    <city>Solothurn</city>
+    </branch>
+</branches>
